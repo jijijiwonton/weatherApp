@@ -36,11 +36,13 @@ function App() {
   return (
     <div className="container">
       <Card />
-      <Button />
-      <Button />
-      <Button />
-      <Button />
-      <Button />
+      <div className="btn_container">
+        <Button />
+        <Button />
+        <Button />
+        <Button />
+        <Button />
+      </div>
     </div>
   );
 }
