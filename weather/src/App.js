@@ -1,5 +1,7 @@
 import './App.css';
 import { useState, useEffect } from 'react';
+import Card from './component/Card';
+import Button from './component/Button';
 
 /**
  * 1. Display weather based on the current situation as soon as the app is running.
@@ -31,7 +33,16 @@ function App() {
   useEffect(() => {
     getCurrentLocation();
   }, []);
-  return <div>Hello</div>;
+  return (
+    <div className="container">
+      <Card />
+      <Button />
+      <Button />
+      <Button />
+      <Button />
+      <Button />
+    </div>
+  );
 }
 
 export default App;
