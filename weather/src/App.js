@@ -63,7 +63,7 @@ function App() {
         timeImg={moon}
         city={weatherInfo.city}
         celsius={weatherInfo.celsius}
-        farenheit={weatherInfo.farenheit}
+        farenheit={Number(weatherInfo.farenheit).toFixed(2)}
         min={weatherInfo.min}
         max={weatherInfo.max}
         description={weatherInfo.description}

@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function Card(props) {
   return (
-    <div>
+    <div className="card">
       <div>
         <div className="flex_container">
           <img className="moon" src={props.timeImg} alt="weather_image" />
@@ -22,7 +22,7 @@ export default function Card(props) {
           <img src={props.maxImg} alt="max image" /> {props.max}
         </h3>
       </div>
-      <h3>{props.description}</h3>
+      <h3 className="description">{props.description}</h3>
     </div>
   );
 }
