@@ -4,7 +4,9 @@
   align-items: center;
   flex-direction: column;
   height: 100vh;
-  background-color: #c0cfff;
+  background-image: url('./assets/image/universe.png');
+  background-size: cover; /* <------ */
+  background-repeat: no-repeat;
 }
 
 .flex_container {
