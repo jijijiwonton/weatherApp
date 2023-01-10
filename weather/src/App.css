@@ -1,19 +1,32 @@
-* {
-  font-size: 35px;
-}
-
 .container {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  height: 100vh;
+  background-color: #c0cfff;
 }
 
-.btn_container {
+.flex_container {
   display: flex;
+}
+
+.moon {
+  padding: 0.5rem;
 }
 
 .btn {
   padding: 0.5rem;
   margin: 0.5rem;
+}
+
+img {
+  width: 60px;
+  height: 60px;
+  border-radius: 100%;
+}
+
+img.btnImg {
+  width: 30px;
+  height: 30px;
 }
