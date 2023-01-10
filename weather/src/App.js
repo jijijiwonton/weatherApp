@@ -26,7 +26,7 @@ function App() {
   // Get weather API based on a current location
   const getWeatherAPIByGeoLocation = async (lat, lon) => {
     const API = '7b5c92adb42c953e26d80267006836ad';
-    let url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API}`;
+    let url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API}&units=metric`;
     let response = await fetch(url);
     let data = await response.json(response);
 
