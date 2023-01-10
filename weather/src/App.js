@@ -1,11 +1,7 @@
 import './App.css';
 import { useState, useEffect } from 'react';
 import Card from './component/Card';
-import Button from './component/Button';
-import moon from './assets/image/moon.jpg';
-import min from './assets/image/min.png';
-import max from './assets/image/max.png';
-
+import Button from 'react-bootstrap/Button';
 /**
  * 1. Display weather based on the current situation as soon as the app is running.
  * 2. The weather info displays a city, celsius, fahrenheit.
@@ -15,15 +11,7 @@ import max from './assets/image/max.png';
  */
 
 function App() {
-  // City, celsius, fahrenheit, description needed for state
-  const [weatherInfo, setWeatherInfo] = useState({
-    city: null,
-    celsius: null,
-    farenheit: null,
-    min: null,
-    ma: null,
-    description: null,
-  });
+  let [weather, setWeather] = useState(null);
 
   // Get current location using navigator object
   const getCurrentLocation = () => {
@@ -42,40 +30,23 @@ function App() {
     let response = await fetch(url);
     let data = await response.json(response);
 
-    console.log(data);
-
-    setWeatherInfo({
-      city: data.name,
-      celsius: data.main.temp,
-      farenheit: data.main.temp * 1.8 + 32,
-      min: data.main.temp_min,
-      max: data.main.temp_max,
-      description: data.weather[0].description,
-    });
+    setWeather(data);
   };
 
   useEffect(() => {
     getCurrentLocation();
   }, []);
   return (
-    <div className="container">
-      <Card
-        timeImg={moon}
-        city={weatherInfo.city}
-        celsius={weatherInfo.celsius}
-        farenheit={Number(weatherInfo.farenheit).toFixed(2)}
-        min={weatherInfo.min}
-        max={weatherInfo.max}
-        description={weatherInfo.description}
-        minImg={min}
-        maxImg={max}
-      />
-      <div className="flex_container">
-        <Button />
-        <Button />
-        <Button />
-        <Button />
-        <Button />
+    <div>
+      <div className="container">
+        <Card weather={weather} />
+        <div className="flex_container">
+          <Button>Current</Button>
+          <Button>Calgary</Button>
+          <Button>Brisbane</Button>
+          <Button>Kimpo</Button>
+          <Button>Seoul</Button>
+        </div>
       </div>
     </div>
   );
